@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+
+.row:after{
+    content : "";
+    clear: both;
+    display: block;
+}
+    [class*="col-"]{
+    float: left;
+    padding: 15px;
+    }
+
+/* For desktop: */
+.col-1 {width: 20%;}
+.col-2 {width: 80%;}
+.col-3 {width: 100%;}
+
+  @media only screen and (max-width: 1000px){
+    /* For mobile phones: */
+    [class*="col-"]{
+     width: 100%;
+    }
+    [class="col-1"]{
+     height: 50px;
+    }
+  }
+
+  .header {
+    background-color: rgb(74, 78, 105);
+    padding: 40px;
+  }
+  .menu {
+    background-color: rgb(154, 140, 152);
+    padding: 100px;
+    height: 600px;
+  }
+
+  .main1 {
+    background-color: rgb(201, 173, 167);
+    padding: 100px;
+    height: 300px;
+  }
+
+    .main2{
+    background-color: rgb(242, 233, 228);
+    padding: 100px;
+    height: 300px;
+  }
+
+
