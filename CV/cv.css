@@ -15,38 +15,82 @@
 /* For desktop: */
 .col-1 {width: 20%;}
 .col-2 {width: 80%;}
-.col-3 {width: 100%;}
+.col-3 {width: 100% }
 
   @media only screen and (max-width: 1000px){
     /* For mobile phones: */
     [class*="col-"]{
      width: 100%;
-    }
-    [class="col-1"]{
-     height: 50px;
-    }
+     }
   }
-
+/*--------------------header----------------------*/
   .header {
     background-color: rgb(74, 78, 105);
     padding: 40px;
+    font-family: calibri;
+    font-size: 40px
   }
+
+  /*--------------------menu----------------------*/
   .menu {
     background-color: rgb(154, 140, 152);
-    padding: 100px;
     height: 600px;
+    font-family: calibri;
+    font-size: 18px
+  }
+  #pic{
+   box-shadow: 0px 1vh 2vh 0px rgba(0,0,0,0.5);
   }
 
-  .main1 {
+  #myName{
+    font-size: 25px
+  }
+
+ .contactbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(38, 70, 83);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0px 1vh 2vh 0px rgba(0,0,0,0.5);
+}
+.contactbtn:hover {
+  background-color: rgb(2, 48, 71);
+}
+/*--------------------main----------------------*/
+  .main {
     background-color: rgb(201, 173, 167);
-    padding: 100px;
-    height: 300px;
+    padding: 50px;
+    height: 600px;
+    font-family: calibri;
+    font-size: 20px
   }
+#skills{
+    background-color: rgb(154, 140, 152);
+    box-shadow: 0px 1vh 1vh 0px rgba(0,0,0,0.2);
+}
+#education{
+    background-color: rgb(154, 140, 152);
+    box-shadow: 0px 1vh 1vh 0px rgba(0,0,0,0.2);
+}
 
-    .main2{
-    background-color: rgb(242, 233, 228);
-    padding: 100px;
-    height: 300px;
-  }
+#employment{
+    background-color: rgb(154, 140, 152);
+    box-shadow: 0px 1vh 1vh 0px rgba(0,0,0,0.2);
+}
 
-
+.downloadbtn{
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgb(74, 78, 105);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0px 1vh 2vh 0px rgba(0,0,0,0.1);
+}
+.downloadbtn:hover {
+  background-color: rgb(2, 48, 71);
+}

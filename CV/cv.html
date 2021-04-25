@@ -4,13 +4,41 @@
         <title>My CV website Efrat Dubi</title>
         <link rel="stylesheet" href="cv.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type = "text/javascript" src="cv.js"></script>
     </head>
-    <body>
-         <div class="row">
-             <div class="col-3 header">header</div>
-             <div class="col-1 menu">menu (picture +details)</div>
-             <div class="col-2 right main1">main part of the page</div>
-             <div class="col-2 right main2">main part of the page</div>
+    <body onload="Typewriter()">
+
+         <div id="welcome" class="col-3 header"></div>
+
+         <div class="col-1 menu">
+                 <img id="pic" src="my_pic.jpeg" width="250px">
+                 <p id="myName">Efrat Dubi </p>
+                 <p>&#9743; 0528915155</p>
+                 <p>&#9993; efratdubi@live.com</p>
+                 <p>&#9872; Beer Sheva Israel</p>
+                 <p>&#9998; Industrial Engineering and Management</p>
+                 <button class="contactbtn" onclick="window.open('CVcontactForm.html','name','width=600,height=400')">Contact me</button>
          </div>
+
+        <div class="col-2 main">
+            <h2 class="h2" id="skills">  Code Skills </h2>
+             <ul type="circle">
+                 <li>Java</li>
+                 <li>Python</li>
+                 <li>html- beginner</li>
+                 <li>c#</li>
+                 <li>sql</li>
+                 <li>R</li>
+             </ul>
+            <h2 class="h2" id="education">  Education</h2>
+            <p>Third year student of Industrial Engineering and Management</p>
+            <h2 class="h2" id="employment">  Employment History</h2>
+            <p>(2016-Today) Instructor of health systems at Maccabi Health Services</p>
+            <a href="Efrat_Dubi.pdf" download= "Efrat Dubi">
+                <button class="downloadbtn">Download CV</button>
+            </a>
+        </div>
+       </div>
     </body>
 </html>
+
