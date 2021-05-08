@@ -81,7 +81,7 @@
     box-shadow: 0px 1vh 1vh 0px rgba(0,0,0,0.2);
 }
 
-.downloadbtn{
+.btnCV{
   font-size: 16px;
   cursor: pointer;
   background-color: rgb(74, 78, 105);
@@ -91,6 +91,6 @@
   border-radius: 12px;
   box-shadow: 0px 1vh 2vh 0px rgba(0,0,0,0.1);
 }
-.downloadbtn:hover {
+.btnCV:hover {
   background-color: rgb(2, 48, 71);
 }

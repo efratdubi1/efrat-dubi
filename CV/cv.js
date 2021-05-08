@@ -9,3 +9,4 @@ function Typewriter(){
         setTimeout(Typewriter,speed);
     }
 }
+
