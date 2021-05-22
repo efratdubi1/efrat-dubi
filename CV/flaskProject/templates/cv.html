@@ -8,7 +8,7 @@
     </head>
     <body onload="Typewriter()">
 
-         <div id="welcome" class="col-3 header"> </div>
+         <div id="welcome" class="col-3 header"> </div> {% include('userHeader.html') %}
 
          <div class="col-1 menu">
                  <img id="pic" src="../static/my_pic.jpeg" width="250px">
@@ -38,6 +38,8 @@
                 <button class="btnCV" class="downloadbtn">Download CV</button>
             </a>
             <button class="btnCV" class="Usersbtn" onclick="window.location.href='UsersList.html'">Users</button>
+            <button class="btnCV" class="assignment9btn" type="button" onclick="window.location.href='assignment9.html'">assignment 9</button>
+
         </div>
        </div>
     </body>

@@ -1,0 +1,7 @@
+<header>
+    {% if session.Logged_in %}
+    <h1> Hi, {{ session.get('username') }} !</h1>
+    {% else %}
+    <p> </p>
+    {% endif %}
+</header>

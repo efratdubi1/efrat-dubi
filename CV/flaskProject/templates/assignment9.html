@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="">
+    <article class="Contact">
+    <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title> assignment 9 </title>
+    </head>
+
+    <body>
+        <form method="GET" action="/assignment9">
+        <p> Please enter your name:  <input name="firstName">
+    <input type=submit value="Search">
+    </form>
+
+    {% if  firstName %}
+       {% for user in users %}
+            {%  if user['firstName'] == firstName %}
+                the user details: <br>
+                ID: {{ user['id'] }},<br>
+                Full name: {{ user['firstName'] }} {{ user['lastName']  }}<br>
+                age: {{ user['age'] }}<br>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+       {% for user in users %}
+            full name: {{ user['firstName'] }}
+            {{ user['lastName']  }} , age
+            {{ user['age'] }}
+           <br>
+           <br>
+       {% endfor %}
+    {% endif %}
+
+    {% if userName  %}
+        <h4> hello, {{ username }}</h4>
+    {%  else%}
+    Please enter your and password
+
+
+    <form action="/assignment9" method="POST">
+         <input name="userName"><br>
+         <input name="password"><br>
+         <input type=submit name="btn" value="log in">
+    </form>
+
+    {% endif %}
+    {% if username %}
+    <br>
+    <form action="/assignment9" method="Post">
+        <input type="submit" name="btn" value="log out"   >
+    </form>
+        <br>
+    {% endif %}
+    <a href="/CVpage">
+        <button class="buttonbacktoCV" style="margin: 5px;" type="button">Back</button>
+    </a>
+    </div>
+</body>
+</article>
+</html>
+
