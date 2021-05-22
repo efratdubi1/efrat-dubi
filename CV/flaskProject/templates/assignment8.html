@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hobbies Page</title>
+ </head>
+    <body>
+    <h1>Welcome To My Skills Page:</h1><br>
+    <h2>Efrat Dubi</h2><br>
+        {% block Hobbies %}
+        {% include ('include.html') %}
+        {% endblock Hobbies %}
+
+        {% if name %}
+            <h3>Hi! {{ name }}, Thank you for coming! :)</h3>
+        {% else %}
+            <h3>Hi! Thank you for coming! :)</h3>
+        {% endif %}
+
+        <ul>
+            <li>{{ hobby1 | default('Cooking',true) | upper }}</li>
+            {% for hobby1 in hobbies %}
+                <li>{{ hobby1 | default('None',true) | upper }}</li>
+            {% endfor %}
+        </ul>
+
+    </body>
+
+</html>
