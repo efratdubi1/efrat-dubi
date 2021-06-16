@@ -129,7 +129,7 @@ def get_user(USER_ID):
         query = "SELECT * FROM users WHERE id = '%s';" % USER_ID
         query_result= interact_db(query= query, query_type='fetch')
         if len(query_result) == 0:
-            return 'User was not found '
+            return 'User was not found! '
         else:
             return jsonify({
                 'success': 'True',
