@@ -59,3 +59,79 @@ def assignment9():
     return render_template('assignment9.html',
                            request_method=request.method, username=username,
                            firstname=firstname, users=users)
+
+@app.route('/log_out')
+def log_out():
+    session.pop('username')
+    session['logged_in'] = False
+    return redirect()
+
+
+@app.route( methods=['GET', 'POST'])
+def assignment10():
+    username = ''
+    second_name = ''
+    if request.method == 'POST':
+        # way to get to secured data - check in DB of the website
+        session['logged_in'] = True
+        username = request.form['username']
+        session['username'] = username
+
+    if request.method == 'GET':
+        if 'second_name' in request.args:
+            second_name = request.args['second_name']
+
+    return render_template(
+                           request_method=request.method,
+                           username=username,
+                           second_name=second_name)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+def interact_db(query, query_type: str):
+    return_value = False
+    connection = mysql.connector.connect(host='localhost',
+                                         user='root',
+                                         passwd='root',
+                                         database='myflasskappdb')
+    cursor = connection.cursor(named_tuple=True)
+    cursor.execute(query)
+
+    if query_type == 'commit':
+        # use for insert /update/delete
+        connection.commit()
+        return_value = True
+
+    if query_type == 'fetch':
+        # use for select statement
+        query_result = cursor.fetchall()
+        return_value = query_result
+
+    connection.close()
+    cursor.close()
+    return return_value
+
+
+
+@app.route('/assignment11/users')
+def Assignment11():
+        query = "SELECT * FROM users"
+        query_result= interact_db(query= query, query_type='fetch')
+        return f'users: {query_result}'
+
+
+@app.route('/assignment11/users/selected', defaults={'USER_ID': 1})
+@app.route('/assignment11/users/selected/<int:USER_ID>')
+def get_user(USER_ID):
+        query = "SELECT * FROM users WHERE id = '%s';" % USER_ID
+        query_result= interact_db(query= query, query_type='fetch')
+        if len(query_result) == 0:
+            return 'User was not found '
+        else:
+            return jsonify({
+                'success': 'True',
+                'Data': query_result
+            })
